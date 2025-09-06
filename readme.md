@@ -6,7 +6,7 @@ Sharing, suggestions and contributions are always welcome!
 
 ## previews
 Categorized wallpaper previews. two pictures per category.
-[For more wallpapers](xqi.live)
+[For more wallpapers](https://xqi.live)
 
 <hr>
 <p align="center">
