@@ -5,13 +5,13 @@
 
 set -e  # Exit on error
 
-echo "🎨 Starting Wallpaper Gallery Build..."
+echo "Starting Wallpaper Gallery Build..."
 
 generate_thumbnails() {
-  echo "📸 Generating thumbnails..."
+  echo "Generating thumbnails..."
   
   if ! command -v convert &> /dev/null; then
-    echo "❌ ImageMagick 'convert' command not found!"
+    echo "ImageMagick 'convert' command not found!"
     echo "Please install ImageMagick first:"
     echo "  - macOS: brew install imagemagick"
     echo "  - Ubuntu: sudo apt install imagemagick"
@@ -26,7 +26,7 @@ generate_thumbnails() {
   current_image=0
   
   if [ "$total_images" -eq 0 ]; then
-    echo "❌ No images found in ./wallpapers/ directory!"
+    echo "No images found in ./wallpapers/ directory!"
     echo "Please add wallpapers to ./wallpapers/{section}/ folders"
     exit 1
   fi
@@ -49,13 +49,13 @@ generate_thumbnails() {
       local thumbnail="thumbnails/$section_name/$img_filename"
       echo "  ($current_image/$total_images): $img_filename"
       convert "$img" -resize 400x300^ -gravity center -extent 400x300 "$thumbnail" 2>/dev/null || {
-        echo "    ❌ Failed to process $img"
+        echo "    Failed to process $img"
         continue
       }
     done
   done
   
-  echo "✅ Thumbnail generation complete: $total_images images processed"
+  echo "Thumbnail generation complete: $total_images images processed"
 }
 
 create_section_data() {
@@ -63,7 +63,7 @@ create_section_data() {
   local subdir=$2
   local maxPerPage=10  # Fewer images per page for 2-column layout
   
-  echo "📝 Creating data for section: $section"
+  echo "Creating data for section: $section"
   
   local data_file="${section}_data.js"
   
@@ -678,7 +678,7 @@ create_main_html() {
             <p>
                 <strong>warning:</strong>
                 this site is still a work in progress, you may have a better experience previewing the wallpapers 
-                <a href="https://github.com/xqi/personal-wallpapers" target="_blank">here</a> in the meantime
+                <a href="https://github.com/xqi1337/personal-wallpapers" target="_blank">here</a> in the meantime
             </p>
         </div>
 
@@ -876,16 +876,16 @@ EOF
   echo "</body>" >> index.html
   echo "</html>" >> index.html
   
-  echo "✅ HTML structure created with $sections_created sections"
+  echo "HTML structure created with $sections_created sections"
 }
 
 # Main build process
-echo "🧹 Cleaning up old files..."
+echo "Cleaning up old files..."
 rm -f *.html *_data.js
 
 echo "🔍 Checking for wallpapers..."
 if [ ! -d "./wallpapers" ]; then
-  echo "❌ ./wallpapers directory not found!"
+  echo "./wallpapers directory not found!"
   echo "Please create the wallpapers directory and add your images"
   exit 1
 fi
@@ -906,7 +906,7 @@ for subdir in ./wallpapers/*; do
 done
 
 if [ "$sections_created" -eq 0 ]; then
-  echo "❌ No sections created! Make sure you have wallpapers in ./wallpapers/ subdirectories"
+  echo "No sections created! Make sure you have wallpapers in ./wallpapers/ subdirectories"
   exit 1
 fi
 
@@ -914,11 +914,11 @@ fi
 create_main_html
 
 echo ""
-echo "🎉 Wallpaper Gallery Build Complete!"
-echo "📂 Created $sections_created sections: ${sections[*]}"
+echo "Wallpaper Gallery Build Complete!"
+echo "Created $sections_created sections: ${sections[*]}"
 
 echo ""
-echo "📝 Generated Files:"
+echo "Generated Files:"
 echo "  - index.html (main gallery page with GitHub button & theme toggle)"
 echo "  - thumbnails/ (compressed images)"
 for section in "${sections[@]}"; do
@@ -926,14 +926,14 @@ for section in "${sections[@]}"; do
 done
 
 echo ""
-echo "🚀 Next Steps:"
+echo "Next Steps:"
 echo "1. Open index.html in your browser"
 echo "2. Test the GitHub button (top-right corner)"
 echo "3. Test dark/light mode toggle (sun/moon icon)"
 echo "4. Verify all images load correctly"
 echo "5. Check responsive design on mobile"
 echo ""
-echo "✨ Features included:"
+echo "Features included:"
 echo "- GitHub button (top-right, fixed position)"
 echo "- Dark/Light mode toggle with theme persistence"
 echo "- Exact design matching the original artifact"
