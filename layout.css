@@ -1,0 +1,36 @@
+/* Simple responsive layout matching GitHub Pages style with Macchiato touches */
+main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 32px;
+    word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 12px;
+    }
+}
+
+/* Base typography improvements for Macchiato */
+body {
+    font-feature-settings: "liga" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure proper box-sizing inheritance */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}

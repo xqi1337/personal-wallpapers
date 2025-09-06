@@ -1,0 +1,468 @@
+@import url("layout.css");
+
+/* Catppuccin Macchiato theme adaptation */
+:root {
+  color-scheme: light dark;
+  
+  /* Catppuccin Macchiato colors */
+  --ctp-rosewater: #f4dbd6;
+  --ctp-flamingo: #f0c6c6;
+  --ctp-pink: #f5bde6;
+  --ctp-mauve: #c6a0f6;
+  --ctp-red: #ed8796;
+  --ctp-maroon: #ee99a0;
+  --ctp-peach: #f5a97f;
+  --ctp-yellow: #eed49f;
+  --ctp-green: #a6da95;
+  --ctp-teal: #8bd5ca;
+  --ctp-sky: #91d7e3;
+  --ctp-sapphire: #7dc4e4;
+  --ctp-blue: #8aadf4;
+  --ctp-lavender: #b7bdf8;
+  --ctp-text: #cad3f5;
+  --ctp-subtext1: #b8c0e0;
+  --ctp-subtext0: #a5adcb;
+  --ctp-overlay2: #939ab7;
+  --ctp-overlay1: #8087a2;
+  --ctp-overlay0: #6e738d;
+  --ctp-surface2: #5b6078;
+  --ctp-surface1: #494d64;
+  --ctp-surface0: #363a4f;
+  --ctp-base: #24273a;
+  --ctp-mantle: #1e2030;
+  --ctp-crust: #181926;
+
+  /* Light theme colors (Catppuccin Latte) */
+  --ctp-light-rosewater: #dc8a78;
+  --ctp-light-flamingo: #dd7878;
+  --ctp-light-pink: #ea76cb;
+  --ctp-light-mauve: #8839ef;
+  --ctp-light-red: #d20f39;
+  --ctp-light-maroon: #e64553;
+  --ctp-light-peach: #fe640b;
+  --ctp-light-yellow: #df8e1d;
+  --ctp-light-green: #40a02b;
+  --ctp-light-teal: #179299;
+  --ctp-light-sky: #04a5e5;
+  --ctp-light-sapphire: #209fb5;
+  --ctp-light-blue: #1e66f5;
+  --ctp-light-lavender: #7287fd;
+  --ctp-light-text: #4c4f69;
+  --ctp-light-subtext1: #5c5f77;
+  --ctp-light-subtext0: #6c6f85;
+  --ctp-light-overlay2: #7c7f93;
+  --ctp-light-overlay1: #8c8fa1;
+  --ctp-light-overlay0: #9ca0b0;
+  --ctp-light-surface2: #acb0be;
+  --ctp-light-surface1: #bcc0cc;
+  --ctp-light-surface0: #ccd0da;
+  --ctp-light-base: #eff1f5;
+  --ctp-light-mantle: #e6e9ef;
+  --ctp-light-crust: #dce0e8;
+
+  /* Theme variables */
+  --bg: light-dark(var(--ctp-light-base), var(--ctp-base));
+  --fg: light-dark(var(--ctp-light-text), var(--ctp-text));
+  --fg-muted: light-dark(var(--ctp-light-subtext1), var(--ctp-subtext1));
+  --border: light-dark(var(--ctp-light-surface1), var(--ctp-surface1));
+  --link: light-dark(var(--ctp-light-blue), var(--ctp-blue));
+  --link-hover: light-dark(var(--ctp-light-sapphire), var(--ctp-sapphire));
+  --code-bg: light-dark(var(--ctp-light-mantle), var(--ctp-mantle));
+  --accent: light-dark(var(--ctp-light-mauve), var(--ctp-mauve));
+  --success: light-dark(var(--ctp-light-green), var(--ctp-green));
+  --warning: light-dark(var(--ctp-light-yellow), var(--ctp-yellow));
+  --error: light-dark(var(--ctp-light-red), var(--ctp-red));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Typography with Macchiato touches */
+h1 {
+  font-size: 2em;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--link), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 24px 0 16px 0;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  color: var(--fg);
+  transition: color 0.2s ease;
+}
+
+h2:hover {
+  color: var(--accent);
+}
+
+/* Warning box with Macchiato styling */
+.warning-box {
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid var(--warning);
+  border-radius: 6px;
+  background: linear-gradient(135deg, 
+    light-dark(rgba(223, 142, 29, 0.1), rgba(238, 212, 159, 0.1)),
+    light-dark(rgba(223, 142, 29, 0.05), rgba(238, 212, 159, 0.05))
+  );
+  color: var(--fg-muted);
+}
+
+.warning-box strong {
+  color: var(--warning);
+}
+
+/* Intro text */
+.intro {
+  margin: 16px 0;
+  line-height: 1.6;
+  color: var(--fg-muted);
+}
+
+.intro strong {
+  color: var(--accent);
+}
+
+/* Links */
+a {
+  color: var(--link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* Sections */
+.section {
+  display: none;
+  margin: 32px 0;
+}
+
+.section.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Image grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.image-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  background: var(--code-bg);
+}
+
+.image-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent);
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.2s ease;
+}
+
+.image-item:hover img {
+  filter: brightness(1.05);
+}
+
+/* Download button overlay */
+.image-item .download-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--accent), var(--link));
+  border: none;
+  border-radius: 8px;
+  color: var(--bg);
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.image-item:hover .download-btn {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Theme selector */
+.theme-selector {
+  margin: 16px 0;
+  display: flex;
+  gap: 8px;
+}
+
+.theme-selector button {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-selector button.active {
+  background: linear-gradient(135deg, var(--accent), var(--link));
+  color: var(--bg);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.theme-selector button:hover:not(.active) {
+  background: var(--border);
+  transform: translateY(-1px);
+}
+
+/* Pagination */
+.pagination {
+  margin: 24px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 40px;
+}
+
+.pagination button.active {
+  background: linear-gradient(135deg, var(--accent), var(--link));
+  color: var(--bg);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pagination button:hover:not(.active) {
+  background: var(--border);
+  transform: translateY(-1px);
+}
+
+/* Loading state */
+.loading {
+  color: var(--fg-muted);
+  font-style: italic;
+  text-align: center;
+  padding: 40px;
+  position: relative;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--link), var(--accent));
+  border-radius: 2px;
+  animation: loading 2s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0%, 100% { transform: translateX(-50%) scaleX(0.5); opacity: 0.5; }
+  50% { transform: translateX(-50%) scaleX(1); opacity: 1; }
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--code-bg), var(--border));
+  border: 1px solid var(--border);
+  color: var(--fg);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+  background: linear-gradient(135deg, var(--accent), var(--link));
+  color: var(--bg);
+  transform: rotate(180deg) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* GitHub link */
+.github-link {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  background: linear-gradient(135deg, var(--code-bg), var(--border));
+  border: 1px solid var(--border);
+  color: var(--fg);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.github-link:hover {
+  background: linear-gradient(135deg, var(--fg), var(--fg-muted));
+  color: var(--bg);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Hidden utility */
+.hidden {
+  display: none !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--code-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--accent), var(--link));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--link), var(--accent));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+  }
+  
+  h2 {
+    font-size: 1.25em;
+  }
+  
+  .theme-selector {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .theme-selector button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px;
+  }
+  
+  .theme-toggle,
+  .github-link {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    top: 12px;
+  }
+  
+  .theme-toggle {
+    right: 12px;
+  }
+  
+  .github-link {
+    left: 12px;
+  }
+  
+  .pagination {
+    gap: 4px;
+  }
+  
+  .pagination button {
+    padding: 6px 10px;
+    font-size: 13px;
+    min-width: 36px;
+  }
+}
