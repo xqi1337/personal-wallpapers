@@ -11,7 +11,7 @@ generate_thumbnails() {
   echo "Generating thumbnails..."
   
   if ! command -v convert &> /dev/null; then
-    echo "ImageMagick 'convert' command not found!"
+    echo "ImageMagick 'convert' not found!"
     echo "Please install ImageMagick first:"
     echo "  - macOS: brew install imagemagick"
     echo "  - Ubuntu: sudo apt install imagemagick"
@@ -906,7 +906,7 @@ for subdir in ./wallpapers/*; do
 done
 
 if [ "$sections_created" -eq 0 ]; then
-  echo "No sections created! Make sure you have wallpapers in ./wallpapers/ subdirectories"
+  echo "No sections created! No wallpapers in ./wallpapers/ subdirectories"
   exit 1
 fi
 
@@ -925,22 +925,4 @@ for section in "${sections[@]}"; do
   echo "  - ${section}_data.js (image data)"
 done
 
-echo ""
-echo "Next Steps:"
-echo "1. Open index.html in your browser"
-echo "2. Test the GitHub button (top-right corner)"
-echo "3. Test dark/light mode toggle (sun/moon icon)"
-echo "4. Verify all images load correctly"
-echo "5. Check responsive design on mobile"
-echo ""
-echo "Features included:"
-echo "- GitHub button (top-right, fixed position)"
-echo "- Dark/Light mode toggle with theme persistence"
-echo "- Exact design matching the original artifact"
-echo "- 2-column layout (1 on mobile)"
-echo "- Smooth animations and hover effects"
-echo "- Download buttons on hover"
-echo "- Pagination support"
-echo "- Error handling for missing images"
-echo "- Responsive design for all screen sizes"
-echo "- Removed theme selector from header"
+echo "Done"
