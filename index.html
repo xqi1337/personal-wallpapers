@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xqi's wallpaper</title>
+    <style>
+        /* Catppuccin theme system with proper light/dark mode */
+        :root {
+            /* Catppuccin Macchiato (Dark) colors */
+            --ctp-rosewater: #f4dbd6;
+            --ctp-flamingo: #f0c6c6;
+            --ctp-pink: #f5bde6;
+            --ctp-mauve: #c6a0f6;
+            --ctp-red: #ed8796;
+            --ctp-maroon: #ee99a0;
+            --ctp-peach: #f5a97f;
+            --ctp-yellow: #eed49f;
+            --ctp-green: #a6da95;
+            --ctp-teal: #8bd5ca;
+            --ctp-sky: #91d7e3;
+            --ctp-sapphire: #7dc4e4;
+            --ctp-blue: #8aadf4;
+            --ctp-lavender: #b7bdf8;
+            --ctp-text: #cad3f5;
+            --ctp-subtext1: #b8c0e0;
+            --ctp-subtext0: #a5adcb;
+            --ctp-overlay2: #939ab7;
+            --ctp-overlay1: #8087a2;
+            --ctp-overlay0: #6e738d;
+            --ctp-surface2: #5b6078;
+            --ctp-surface1: #494d64;
+            --ctp-surface0: #363a4f;
+            --ctp-base: #24273a;
+            --ctp-mantle: #1e2030;
+            --ctp-crust: #181926;
+
+            /* Catppuccin Latte (Light) colors */
+            --ctp-light-rosewater: #dc8a78;
+            --ctp-light-flamingo: #dd7878;
+            --ctp-light-pink: #ea76cb;
+            --ctp-light-mauve: #8839ef;
+            --ctp-light-red: #d20f39;
+            --ctp-light-maroon: #e64553;
+            --ctp-light-peach: #fe640b;
+            --ctp-light-yellow: #df8e1d;
+            --ctp-light-green: #40a02b;
+            --ctp-light-teal: #179299;
+            --ctp-light-sky: #04a5e5;
+            --ctp-light-sapphire: #209fb5;
+            --ctp-light-blue: #1e66f5;
+            --ctp-light-lavender: #7287fd;
+            --ctp-light-text: #4c4f69;
+            --ctp-light-subtext1: #5c5f77;
+            --ctp-light-subtext0: #6c6f85;
+            --ctp-light-overlay2: #7c7f93;
+            --ctp-light-overlay1: #8c8fa1;
+            --ctp-light-overlay0: #9ca0b0;
+            --ctp-light-surface2: #acb0be;
+            --ctp-light-surface1: #bcc0cc;
+            --ctp-light-surface0: #ccd0da;
+            --ctp-light-base: #eff1f5;
+            --ctp-light-mantle: #e6e9ef;
+            --ctp-light-crust: #dce0e8;
+        }
+
+        /* Theme variables for dark mode (default) */
+        [data-theme="dark"] {
+            --bg: var(--ctp-base);
+            --fg: var(--ctp-text);
+            --fg-muted: var(--ctp-subtext1);
+            --fg-subtle: var(--ctp-subtext0);
+            --border: var(--ctp-surface1);
+            --surface: var(--ctp-surface0);
+            --surface-elevated: var(--ctp-mantle);
+            --link: var(--ctp-blue);
+            --link-hover: var(--ctp-sapphire);
+            --accent: var(--ctp-mauve);
+            --success: var(--ctp-green);
+            --warning: var(--ctp-yellow);
+            --error: var(--ctp-red);
+            --pink: var(--ctp-pink);
+            --peach: var(--ctp-peach);
+        }
+
+        /* Theme variables for light mode */
+        [data-theme="light"] {
+            --bg: var(--ctp-light-base);
+            --fg: var(--ctp-light-text);
+            --fg-muted: var(--ctp-light-subtext1);
+            --fg-subtle: var(--ctp-light-subtext0);
+            --border: var(--ctp-light-surface1);
+            --surface: var(--ctp-light-surface0);
+            --surface-elevated: var(--ctp-light-mantle);
+            --link: var(--ctp-light-blue);
+            --link-hover: var(--ctp-light-sapphire);
+            --accent: var(--ctp-light-mauve);
+            --success: var(--ctp-light-green);
+            --warning: var(--ctp-light-yellow);
+            --error: var(--ctp-light-red);
+            --pink: var(--ctp-light-pink);
+            --peach: var(--ctp-light-peach);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--fg);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Fixed action buttons - top right corner */
+        .action-buttons {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 12px;
+            z-index: 1000;
+        }
+
+        .action-btn {
+            width: 48px;
+            height: 48px;
+            background: var(--surface-elevated);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: var(--fg);
+        }
+
+        .action-btn:hover {
+            background: linear-gradient(135deg, var(--accent), var(--link));
+            color: var(--bg);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .github-btn:hover {
+            background: linear-gradient(135deg, var(--fg), var(--fg-muted));
+        }
+
+        .theme-toggle .sun-icon {
+            display: none;
+        }
+
+        .theme-toggle .moon-icon {
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        [data-theme="light"] .theme-toggle .sun-icon {
+            display: block;
+        }
+
+        [data-theme="light"] .theme-toggle .moon-icon {
+            display: none;
+        }
+
+        .theme-toggle:hover .sun-icon,
+        .theme-toggle:hover .moon-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Header matching the artifact exactly */
+        .header {
+            background: var(--surface-elevated);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: conic-gradient(from 0deg, var(--error), var(--peach), var(--warning), var(--success), var(--link), var(--accent), var(--pink), var(--error));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .logo h1 {
+            font-family: "Pacifico", cursive;
+            font-size: 1.8rem;
+            color: var(--fg);
+            font-weight: normal;
+        }
+
+        /* Main content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(238, 212, 159, 0.1), rgba(238, 212, 159, 0.05));
+            border: 1px solid var(--warning);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            color: var(--fg-subtle);
+        }
+
+        .warning-box strong {
+            color: var(--warning);
+        }
+
+        .warning-box a {
+            color: var(--link);
+            text-decoration: underline;
+            font-style: italic;
+        }
+
+        .intro {
+            margin-bottom: 40px;
+            color: var(--fg-muted);
+        }
+
+        .intro p {
+            margin-bottom: 8px;
+        }
+
+        .intro .note {
+            color: var(--fg-subtle);
+            font-style: italic;
+            margin-top: 16px;
+        }
+
+        .intro .note strong {
+            color: var(--fg);
+        }
+
+        /* Section headers */
+        .section-header {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border);
+            cursor: pointer;
+            color: var(--fg);
+            transition: color 0.2s ease;
+            text-transform: capitalize;
+        }
+
+        .section-header:hover {
+            color: var(--accent);
+        }
+
+        .section {
+            display: none;
+            margin: 24px 0;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Image grid - exactly 2 columns like the artifact */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .image-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            background: var(--surface);
+        }
+
+        .image-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-color: var(--accent);
+        }
+
+        .image-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: filter 0.2s ease;
+        }
+
+        .image-item:hover img {
+            filter: brightness(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, rgba(54, 58, 79, 0.9), rgba(54, 58, 79, 0.7));
+            padding: 16px;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .image-item:hover .image-overlay {
+            transform: translateY(0);
+        }
+
+        .image-title {
+            color: var(--fg);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .image-author {
+            color: var(--fg-muted);
+            font-size: 0.875rem;
+        }
+
+        .download-btn {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            background: linear-gradient(135deg, var(--accent), var(--link));
+            color: white;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .image-item:hover .download-btn {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .download-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Pagination */
+        .pagination {
+            margin: 32px 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .pagination button {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--fg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-width: 40px;
+        }
+
+        .pagination button.active {
+            background: linear-gradient(135deg, var(--accent), var(--link));
+            color: var(--bg);
+            border-color: var(--accent);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .pagination button:hover:not(.active) {
+            background: var(--border);
+            transform: translateY(-1px);
+        }
+
+        /* Loading state */
+        .loading {
+            color: var(--fg-subtle);
+            font-style: italic;
+            text-align: center;
+            padding: 40px;
+            position: relative;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--link), var(--accent));
+            border-radius: 2px;
+            animation: loading 2s ease-in-out infinite;
+        }
+
+        @keyframes loading {
+            0%, 100% { transform: translateX(-50%) scaleX(0.5); opacity: 0.5; }
+            50% { transform: translateX(-50%) scaleX(1); opacity: 1; }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .action-buttons {
+                top: 16px;
+                right: 16px;
+                gap: 8px;
+            }
+
+            .action-btn {
+                width: 40px;
+                height: 40px;
+            }
+
+            .header-top {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .logo h1 {
+                font-size: 1.4rem;
+                text-align: center;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .container {
+                padding: 20px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .action-buttons {
+                top: 12px;
+                right: 12px;
+            }
+
+            .logo-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+
+            .image-grid {
+                gap: 20px;
+            }
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--surface-elevated);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--accent), var(--link));
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--link), var(--accent));
+        }
+    </style>
+    <!-- Google Fonts for Pacifico -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Fixed action buttons -->
+    <div class="action-buttons">
+        <a href="https://github.com/xqi1337/personal-wallpapers" class="action-btn github-btn" target="_blank" title="View on GitHub">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+        </a>
+        
+        <button class="action-btn theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+            <svg class="sun-icon" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+            </svg>
+            <svg class="moon-icon" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Header matching the artifact exactly (without theme selector) -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-top">
+                <div class="logo">
+                    <div class="logo-icon">❄️</div>
+                    <h1>xqi's wallpaper dump</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container">
+        <!-- Warning box -->
+        <div class="warning-box">
+            <p>
+                <strong>warning:</strong>
+                this site is still a work in progress, you may have a better experience previewing the wallpapers 
+                <a href="https://github.com/xqi1337/personal-wallpapers" target="_blank">here</a> in the meantime
+            </p>
+        </div>
+
+        <!-- Intro text -->
+        <div class="intro">
+            <p>hii, welcome to my wallpaper dump!</p>
+            <p>remember to credit original authors and enjoy your stay ^-^</p>
+            <div class="note">
+                <strong>note:</strong> the reason the wallpapers are compressed is to speed up your viewing experience, if you hover over the wallpaper you will find a download button
+            </div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('abstract')">abstract</h2>
+        <div class="section" id="abstract">
+            <div class="loading" id="abstract-loading">loading...</div>
+            <div class="image-grid hidden" id="abstract-grid"></div>
+            <div class="pagination hidden" id="abstract-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('aerial')">aerial</h2>
+        <div class="section" id="aerial">
+            <div class="loading" id="aerial-loading">loading...</div>
+            <div class="image-grid hidden" id="aerial-grid"></div>
+            <div class="pagination hidden" id="aerial-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('anime')">anime</h2>
+        <div class="section" id="anime">
+            <div class="loading" id="anime-loading">loading...</div>
+            <div class="image-grid hidden" id="anime-grid"></div>
+            <div class="pagination hidden" id="anime-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('apeiros')">apeiros</h2>
+        <div class="section" id="apeiros">
+            <div class="loading" id="apeiros-loading">loading...</div>
+            <div class="image-grid hidden" id="apeiros-grid"></div>
+            <div class="pagination hidden" id="apeiros-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('apocalypse')">apocalypse</h2>
+        <div class="section" id="apocalypse">
+            <div class="loading" id="apocalypse-loading">loading...</div>
+            <div class="image-grid hidden" id="apocalypse-grid"></div>
+            <div class="pagination hidden" id="apocalypse-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('architecture')">architecture</h2>
+        <div class="section" id="architecture">
+            <div class="loading" id="architecture-loading">loading...</div>
+            <div class="image-grid hidden" id="architecture-grid"></div>
+            <div class="pagination hidden" id="architecture-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('basalt')">basalt</h2>
+        <div class="section" id="basalt">
+            <div class="loading" id="basalt-loading">loading...</div>
+            <div class="image-grid hidden" id="basalt-grid"></div>
+            <div class="pagination hidden" id="basalt-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('boccha')">boccha</h2>
+        <div class="section" id="boccha">
+            <div class="loading" id="boccha-loading">loading...</div>
+            <div class="image-grid hidden" id="boccha-grid"></div>
+            <div class="pagination hidden" id="boccha-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('brands')">brands</h2>
+        <div class="section" id="brands">
+            <div class="loading" id="brands-loading">loading...</div>
+            <div class="image-grid hidden" id="brands-grid"></div>
+            <div class="pagination hidden" id="brands-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('calm')">calm</h2>
+        <div class="section" id="calm">
+            <div class="loading" id="calm-loading">loading...</div>
+            <div class="image-grid hidden" id="calm-grid"></div>
+            <div class="pagination hidden" id="calm-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('cars')">cars</h2>
+        <div class="section" id="cars">
+            <div class="loading" id="cars-loading">loading...</div>
+            <div class="image-grid hidden" id="cars-grid"></div>
+            <div class="pagination hidden" id="cars-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('Catppuccin')">Catppuccin</h2>
+        <div class="section" id="Catppuccin">
+            <div class="loading" id="Catppuccin-loading">loading...</div>
+            <div class="image-grid hidden" id="Catppuccin-grid"></div>
+            <div class="pagination hidden" id="Catppuccin-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('centered')">centered</h2>
+        <div class="section" id="centered">
+            <div class="loading" id="centered-loading">loading...</div>
+            <div class="image-grid hidden" id="centered-grid"></div>
+            <div class="pagination hidden" id="centered-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('cherry')">cherry</h2>
+        <div class="section" id="cherry">
+            <div class="loading" id="cherry-loading">loading...</div>
+            <div class="image-grid hidden" id="cherry-grid"></div>
+            <div class="pagination hidden" id="cherry-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('chillop')">chillop</h2>
+        <div class="section" id="chillop">
+            <div class="loading" id="chillop-loading">loading...</div>
+            <div class="image-grid hidden" id="chillop-grid"></div>
+            <div class="pagination hidden" id="chillop-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('cold')">cold</h2>
+        <div class="section" id="cold">
+            <div class="loading" id="cold-loading">loading...</div>
+            <div class="image-grid hidden" id="cold-grid"></div>
+            <div class="pagination hidden" id="cold-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('cyberpunk')">cyberpunk</h2>
+        <div class="section" id="cyberpunk">
+            <div class="loading" id="cyberpunk-loading">loading...</div>
+            <div class="image-grid hidden" id="cyberpunk-grid"></div>
+            <div class="pagination hidden" id="cyberpunk-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('decay')">decay</h2>
+        <div class="section" id="decay">
+            <div class="loading" id="decay-loading">loading...</div>
+            <div class="image-grid hidden" id="decay-grid"></div>
+            <div class="pagination hidden" id="decay-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('devicons')">devicons</h2>
+        <div class="section" id="devicons">
+            <div class="loading" id="devicons-loading">loading...</div>
+            <div class="image-grid hidden" id="devicons-grid"></div>
+            <div class="pagination hidden" id="devicons-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('digital')">digital</h2>
+        <div class="section" id="digital">
+            <div class="loading" id="digital-loading">loading...</div>
+            <div class="image-grid hidden" id="digital-grid"></div>
+            <div class="pagination hidden" id="digital-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('dreamcore')">dreamcore</h2>
+        <div class="section" id="dreamcore">
+            <div class="loading" id="dreamcore-loading">loading...</div>
+            <div class="image-grid hidden" id="dreamcore-grid"></div>
+            <div class="pagination hidden" id="dreamcore-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('evangelion')">evangelion</h2>
+        <div class="section" id="evangelion">
+            <div class="loading" id="evangelion-loading">loading...</div>
+            <div class="image-grid hidden" id="evangelion-grid"></div>
+            <div class="pagination hidden" id="evangelion-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('Everforest')">Everforest</h2>
+        <div class="section" id="Everforest">
+            <div class="loading" id="Everforest-loading">loading...</div>
+            <div class="image-grid hidden" id="Everforest-grid"></div>
+            <div class="pagination hidden" id="Everforest-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('fauna')">fauna</h2>
+        <div class="section" id="fauna">
+            <div class="loading" id="fauna-loading">loading...</div>
+            <div class="image-grid hidden" id="fauna-grid"></div>
+            <div class="pagination hidden" id="fauna-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('flowers')">flowers</h2>
+        <div class="section" id="flowers">
+            <div class="loading" id="flowers-loading">loading...</div>
+            <div class="image-grid hidden" id="flowers-grid"></div>
+            <div class="pagination hidden" id="flowers-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('fogsmoke')">fogsmoke</h2>
+        <div class="section" id="fogsmoke">
+            <div class="loading" id="fogsmoke-loading">loading...</div>
+            <div class="image-grid hidden" id="fogsmoke-grid"></div>
+            <div class="pagination hidden" id="fogsmoke-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('frappe')">frappe</h2>
+        <div class="section" id="frappe">
+            <div class="loading" id="frappe-loading">loading...</div>
+            <div class="image-grid hidden" id="frappe-grid"></div>
+            <div class="pagination hidden" id="frappe-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('geometry')">geometry</h2>
+        <div class="section" id="geometry">
+            <div class="loading" id="geometry-loading">loading...</div>
+            <div class="image-grid hidden" id="geometry-grid"></div>
+            <div class="pagination hidden" id="geometry-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('girl')">girl</h2>
+        <div class="section" id="girl">
+            <div class="loading" id="girl-loading">loading...</div>
+            <div class="image-grid hidden" id="girl-grid"></div>
+            <div class="pagination hidden" id="girl-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('gruvbox')">gruvbox</h2>
+        <div class="section" id="gruvbox">
+            <div class="loading" id="gruvbox-loading">loading...</div>
+            <div class="image-grid hidden" id="gruvbox-grid"></div>
+            <div class="pagination hidden" id="gruvbox-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('horizontal')">horizontal</h2>
+        <div class="section" id="horizontal">
+            <div class="loading" id="horizontal-loading">loading...</div>
+            <div class="image-grid hidden" id="horizontal-grid"></div>
+            <div class="pagination hidden" id="horizontal-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('interior')">interior</h2>
+        <div class="section" id="interior">
+            <div class="loading" id="interior-loading">loading...</div>
+            <div class="image-grid hidden" id="interior-grid"></div>
+            <div class="pagination hidden" id="interior-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('jackb')">jackb</h2>
+        <div class="section" id="jackb">
+            <div class="loading" id="jackb-loading">loading...</div>
+            <div class="image-grid hidden" id="jackb-grid"></div>
+            <div class="pagination hidden" id="jackb-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('japanese')">japanese</h2>
+        <div class="section" id="japanese">
+            <div class="loading" id="japanese-loading">loading...</div>
+            <div class="image-grid hidden" id="japanese-grid"></div>
+            <div class="pagination hidden" id="japanese-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('lightbulb')">lightbulb</h2>
+        <div class="section" id="lightbulb">
+            <div class="loading" id="lightbulb-loading">loading...</div>
+            <div class="image-grid hidden" id="lightbulb-grid"></div>
+            <div class="pagination hidden" id="lightbulb-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('linux')">linux</h2>
+        <div class="section" id="linux">
+            <div class="loading" id="linux-loading">loading...</div>
+            <div class="image-grid hidden" id="linux-grid"></div>
+            <div class="pagination hidden" id="linux-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('logo')">logo</h2>
+        <div class="section" id="logo">
+            <div class="loading" id="logo-loading">loading...</div>
+            <div class="image-grid hidden" id="logo-grid"></div>
+            <div class="pagination hidden" id="logo-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('m-26.jp')">m-26.jp</h2>
+        <div class="section" id="m-26.jp">
+            <div class="loading" id="m-26.jp-loading">loading...</div>
+            <div class="image-grid hidden" id="m-26.jp-grid"></div>
+            <div class="pagination hidden" id="m-26.jp-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('manga')">manga</h2>
+        <div class="section" id="manga">
+            <div class="loading" id="manga-loading">loading...</div>
+            <div class="image-grid hidden" id="manga-grid"></div>
+            <div class="pagination hidden" id="manga-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('minimal')">minimal</h2>
+        <div class="section" id="minimal">
+            <div class="loading" id="minimal-loading">loading...</div>
+            <div class="image-grid hidden" id="minimal-grid"></div>
+            <div class="pagination hidden" id="minimal-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('minimalistic')">minimalistic</h2>
+        <div class="section" id="minimalistic">
+            <div class="loading" id="minimalistic-loading">loading...</div>
+            <div class="image-grid hidden" id="minimalistic-grid"></div>
+            <div class="pagination hidden" id="minimalistic-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('misc')">misc</h2>
+        <div class="section" id="misc">
+            <div class="loading" id="misc-loading">loading...</div>
+            <div class="image-grid hidden" id="misc-grid"></div>
+            <div class="pagination hidden" id="misc-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('mix')">mix</h2>
+        <div class="section" id="mix">
+            <div class="loading" id="mix-loading">loading...</div>
+            <div class="image-grid hidden" id="mix-grid"></div>
+            <div class="pagination hidden" id="mix-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('mocha_bg')">mocha bg</h2>
+        <div class="section" id="mocha_bg">
+            <div class="loading" id="mocha_bg-loading">loading...</div>
+            <div class="image-grid hidden" id="mocha_bg-grid"></div>
+            <div class="pagination hidden" id="mocha_bg-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('monochrome')">monochrome</h2>
+        <div class="section" id="monochrome">
+            <div class="loading" id="monochrome-loading">loading...</div>
+            <div class="image-grid hidden" id="monochrome-grid"></div>
+            <div class="pagination hidden" id="monochrome-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('mountain')">mountain</h2>
+        <div class="section" id="mountain">
+            <div class="loading" id="mountain-loading">loading...</div>
+            <div class="image-grid hidden" id="mountain-grid"></div>
+            <div class="pagination hidden" id="mountain-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('nature')">nature</h2>
+        <div class="section" id="nature">
+            <div class="loading" id="nature-loading">loading...</div>
+            <div class="image-grid hidden" id="nature-grid"></div>
+            <div class="pagination hidden" id="nature-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('Neon')">Neon</h2>
+        <div class="section" id="Neon">
+            <div class="loading" id="Neon-loading">loading...</div>
+            <div class="image-grid hidden" id="Neon-grid"></div>
+            <div class="pagination hidden" id="Neon-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('nord')">nord</h2>
+        <div class="section" id="nord">
+            <div class="loading" id="nord-loading">loading...</div>
+            <div class="image-grid hidden" id="nord-grid"></div>
+            <div class="pagination hidden" id="nord-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('one-dark')">one-dark</h2>
+        <div class="section" id="one-dark">
+            <div class="loading" id="one-dark-loading">loading...</div>
+            <div class="image-grid hidden" id="one-dark-grid"></div>
+            <div class="pagination hidden" id="one-dark-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('other-themes')">other-themes</h2>
+        <div class="section" id="other-themes">
+            <div class="loading" id="other-themes-loading">loading...</div>
+            <div class="image-grid hidden" id="other-themes-grid"></div>
+            <div class="pagination hidden" id="other-themes-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('outrun')">outrun</h2>
+        <div class="section" id="outrun">
+            <div class="loading" id="outrun-loading">loading...</div>
+            <div class="image-grid hidden" id="outrun-grid"></div>
+            <div class="pagination hidden" id="outrun-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('painting')">painting</h2>
+        <div class="section" id="painting">
+            <div class="loading" id="painting-loading">loading...</div>
+            <div class="image-grid hidden" id="painting-grid"></div>
+            <div class="pagination hidden" id="painting-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('paper')">paper</h2>
+        <div class="section" id="paper">
+            <div class="loading" id="paper-loading">loading...</div>
+            <div class="image-grid hidden" id="paper-grid"></div>
+            <div class="pagination hidden" id="paper-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('pastel')">pastel</h2>
+        <div class="section" id="pastel">
+            <div class="loading" id="pastel-loading">loading...</div>
+            <div class="image-grid hidden" id="pastel-grid"></div>
+            <div class="pagination hidden" id="pastel-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('photography')">photography</h2>
+        <div class="section" id="photography">
+            <div class="loading" id="photography-loading">loading...</div>
+            <div class="image-grid hidden" id="photography-grid"></div>
+            <div class="pagination hidden" id="photography-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('pixel')">pixel</h2>
+        <div class="section" id="pixel">
+            <div class="loading" id="pixel-loading">loading...</div>
+            <div class="image-grid hidden" id="pixel-grid"></div>
+            <div class="pagination hidden" id="pixel-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('pixelart')">pixelart</h2>
+        <div class="section" id="pixelart">
+            <div class="loading" id="pixelart-loading">loading...</div>
+            <div class="image-grid hidden" id="pixelart-grid"></div>
+            <div class="pagination hidden" id="pixelart-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('poly')">poly</h2>
+        <div class="section" id="poly">
+            <div class="loading" id="poly-loading">loading...</div>
+            <div class="image-grid hidden" id="poly-grid"></div>
+            <div class="pagination hidden" id="poly-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('purple')">purple</h2>
+        <div class="section" id="purple">
+            <div class="loading" id="purple-loading">loading...</div>
+            <div class="image-grid hidden" id="purple-grid"></div>
+            <div class="pagination hidden" id="purple-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('radium')">radium</h2>
+        <div class="section" id="radium">
+            <div class="loading" id="radium-loading">loading...</div>
+            <div class="image-grid hidden" id="radium-grid"></div>
+            <div class="pagination hidden" id="radium-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('renders')">renders</h2>
+        <div class="section" id="renders">
+            <div class="loading" id="renders-loading">loading...</div>
+            <div class="image-grid hidden" id="renders-grid"></div>
+            <div class="pagination hidden" id="renders-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('retro')">retro</h2>
+        <div class="section" id="retro">
+            <div class="loading" id="retro-loading">loading...</div>
+            <div class="image-grid hidden" id="retro-grid"></div>
+            <div class="pagination hidden" id="retro-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('rndm')">rndm</h2>
+        <div class="section" id="rndm">
+            <div class="loading" id="rndm-loading">loading...</div>
+            <div class="image-grid hidden" id="rndm-grid"></div>
+            <div class="pagination hidden" id="rndm-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('solarized')">solarized</h2>
+        <div class="section" id="solarized">
+            <div class="loading" id="solarized-loading">loading...</div>
+            <div class="image-grid hidden" id="solarized-grid"></div>
+            <div class="pagination hidden" id="solarized-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('space')">space</h2>
+        <div class="section" id="space">
+            <div class="loading" id="space-loading">loading...</div>
+            <div class="image-grid hidden" id="space-grid"></div>
+            <div class="pagination hidden" id="space-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('spam')">spam</h2>
+        <div class="section" id="spam">
+            <div class="loading" id="spam-loading">loading...</div>
+            <div class="image-grid hidden" id="spam-grid"></div>
+            <div class="pagination hidden" id="spam-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('stalenhag')">stalenhag</h2>
+        <div class="section" id="stalenhag">
+            <div class="loading" id="stalenhag-loading">loading...</div>
+            <div class="image-grid hidden" id="stalenhag-grid"></div>
+            <div class="pagination hidden" id="stalenhag-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('tile')">tile</h2>
+        <div class="section" id="tile">
+            <div class="loading" id="tile-loading">loading...</div>
+            <div class="image-grid hidden" id="tile-grid"></div>
+            <div class="pagination hidden" id="tile-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('tokyo-night')">tokyo-night</h2>
+        <div class="section" id="tokyo-night">
+            <div class="loading" id="tokyo-night-loading">loading...</div>
+            <div class="image-grid hidden" id="tokyo-night-grid"></div>
+            <div class="pagination hidden" id="tokyo-night-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('TokyoNight')">TokyoNight</h2>
+        <div class="section" id="TokyoNight">
+            <div class="loading" id="TokyoNight-loading">loading...</div>
+            <div class="image-grid hidden" id="TokyoNight-grid"></div>
+            <div class="pagination hidden" id="TokyoNight-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('unsorted')">unsorted</h2>
+        <div class="section" id="unsorted">
+            <div class="loading" id="unsorted-loading">loading...</div>
+            <div class="image-grid hidden" id="unsorted-grid"></div>
+            <div class="pagination hidden" id="unsorted-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('wave')">wave</h2>
+        <div class="section" id="wave">
+            <div class="loading" id="wave-loading">loading...</div>
+            <div class="image-grid hidden" id="wave-grid"></div>
+            <div class="pagination hidden" id="wave-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('weirdcore')">weirdcore</h2>
+        <div class="section" id="weirdcore">
+            <div class="loading" id="weirdcore-loading">loading...</div>
+            <div class="image-grid hidden" id="weirdcore-grid"></div>
+            <div class="pagination hidden" id="weirdcore-pagination"></div>
+        </div>
+        <h2 class="section-header" onclick="toggleSection('windows')">windows</h2>
+        <div class="section" id="windows">
+            <div class="loading" id="windows-loading">loading...</div>
+            <div class="image-grid hidden" id="windows-grid"></div>
+            <div class="pagination hidden" id="windows-pagination"></div>
+        </div>
+    </main>
+
+    <script>
+        let activeSection = null;
+        let sectionStates = {};
+
+        // Theme toggle functionality
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            
+            // Save preference
+            localStorage.setItem('theme', newTheme);
+            
+            console.log('Switched to theme:', newTheme);
+        }
+
+        // Initialize theme from localStorage or system preference
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        }
+
+        // Initialize section state
+        function initSection(section) {
+            if (!sectionStates[section]) {
+                sectionStates[section] = {
+                    page: 1,
+                    loaded: false
+                };
+            }
+        }
+
+        // Toggle section visibility
+        function toggleSection(section) {
+            const sectionEl = document.getElementById(section);
+            const isActive = sectionEl.classList.contains('active');
+            
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            
+            if (!isActive) {
+                sectionEl.classList.add('active');
+                activeSection = section;
+                initSection(section);
+                
+                if (!sectionStates[section].loaded) {
+                    loadSection(section);
+                }
+            } else {
+                activeSection = null;
+            }
+        }
+
+        // Load section content
+        function loadSection(section) {
+            const data = window.sectionData[section];
+            if (!data) {
+                console.error('No data found for section:', section);
+                return;
+            }
+
+            const grid = document.getElementById(`${section}-grid`);
+            const loading = document.getElementById(`${section}-loading`);
+            const pagination = document.getElementById(`${section}-pagination`);
+            
+            const images = data.dark || [];
+            
+            if (images.length === 0) {
+                grid.innerHTML = '<div style="text-align: center; padding: 40px; color: var(--fg-subtle);">No images found</div>';
+                loading.classList.add('hidden');
+                grid.classList.remove('hidden');
+                pagination.classList.add('hidden');
+                return;
+            }
+            
+            const itemsPerPage = data.maxPerPage;
+            const totalPages = Math.ceil(images.length / itemsPerPage);
+            const currentPage = sectionStates[section].page;
+            
+            // Generate image grid with exactly 2 columns layout
+            const startIdx = (currentPage - 1) * itemsPerPage;
+            const endIdx = Math.min(startIdx + itemsPerPage, images.length);
+            const pageImages = images.slice(startIdx, endIdx);
+            
+            grid.innerHTML = pageImages.map(img => `
+                <div class="image-item">
+                    <img src="${img.thumb}" alt="${img.alt}" loading="lazy" 
+                         onerror="this.parentNode.style.display='none'">
+                    <div class="image-overlay">
+                        <div class="image-title">${img.title}</div>
+                        <div class="image-author">by kurzgesagt</div>
+                    </div>
+                    <button class="download-btn" onclick="window.open('${img.src}', '_blank')" title="Download">↓</button>
+                </div>
+            `).join('');
+            
+            // Generate pagination
+            if (totalPages > 1) {
+                pagination.innerHTML = Array.from({length: totalPages}, (_, i) => {
+                    const page = i + 1;
+                    const active = page === currentPage ? ' active' : '';
+                    return `<button class="${active}" onclick="goToPage('${section}', ${page})">${page}</button>`;
+                }).join('');
+                pagination.classList.remove('hidden');
+            } else {
+                pagination.classList.add('hidden');
+            }
+            
+            loading.classList.add('hidden');
+            grid.classList.remove('hidden');
+            sectionStates[section].loaded = true;
+        }
+
+        // Go to specific page
+        function goToPage(section, page) {
+            if (!sectionStates[section]) return;
+            sectionStates[section].page = page;
+            loadSection(section);
+        }
+        
+        function downloadImage(filename) {
+            console.log('Downloading:', filename);
+            // This would trigger the actual download in a real implementation
+        }
+        
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            
+            // Auto-open first section if available
+            const firstSection = Object.keys(window.sectionData || {})[0];
+            if (firstSection) {
+                setTimeout(() => toggleSection(firstSection), 100);
+            }
+        });
+
+        // Listen for system theme changes
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                if (!localStorage.getItem('theme')) {
+                    document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+                }
+            });
+        }
+    </script>
+    <script src="abstract_data.js"></script>
+    <script src="aerial_data.js"></script>
+    <script src="anime_data.js"></script>
+    <script src="apeiros_data.js"></script>
+    <script src="apocalypse_data.js"></script>
+    <script src="architecture_data.js"></script>
+    <script src="basalt_data.js"></script>
+    <script src="boccha_data.js"></script>
+    <script src="brands_data.js"></script>
+    <script src="calm_data.js"></script>
+    <script src="cars_data.js"></script>
+    <script src="Catppuccin_data.js"></script>
+    <script src="centered_data.js"></script>
+    <script src="cherry_data.js"></script>
+    <script src="chillop_data.js"></script>
+    <script src="cold_data.js"></script>
+    <script src="cyberpunk_data.js"></script>
+    <script src="decay_data.js"></script>
+    <script src="devicons_data.js"></script>
+    <script src="digital_data.js"></script>
+    <script src="dreamcore_data.js"></script>
+    <script src="evangelion_data.js"></script>
+    <script src="Everforest_data.js"></script>
+    <script src="fauna_data.js"></script>
+    <script src="flowers_data.js"></script>
+    <script src="fogsmoke_data.js"></script>
+    <script src="frappe_data.js"></script>
+    <script src="geometry_data.js"></script>
+    <script src="girl_data.js"></script>
+    <script src="gruvbox_data.js"></script>
+    <script src="horizontal_data.js"></script>
+    <script src="interior_data.js"></script>
+    <script src="jackb_data.js"></script>
+    <script src="japanese_data.js"></script>
+    <script src="lightbulb_data.js"></script>
+    <script src="linux_data.js"></script>
+    <script src="logo_data.js"></script>
+    <script src="m-26.jp_data.js"></script>
+    <script src="manga_data.js"></script>
+    <script src="minimal_data.js"></script>
+    <script src="minimalistic_data.js"></script>
+    <script src="misc_data.js"></script>
+    <script src="mix_data.js"></script>
+    <script src="mocha_bg_data.js"></script>
+    <script src="monochrome_data.js"></script>
+    <script src="mountain_data.js"></script>
+    <script src="nature_data.js"></script>
+    <script src="Neon_data.js"></script>
+    <script src="nord_data.js"></script>
+    <script src="one-dark_data.js"></script>
+    <script src="other-themes_data.js"></script>
+    <script src="outrun_data.js"></script>
+    <script src="painting_data.js"></script>
+    <script src="paper_data.js"></script>
+    <script src="pastel_data.js"></script>
+    <script src="photography_data.js"></script>
+    <script src="pixel_data.js"></script>
+    <script src="pixelart_data.js"></script>
+    <script src="poly_data.js"></script>
+    <script src="purple_data.js"></script>
+    <script src="radium_data.js"></script>
+    <script src="renders_data.js"></script>
+    <script src="retro_data.js"></script>
+    <script src="rndm_data.js"></script>
+    <script src="solarized_data.js"></script>
+    <script src="space_data.js"></script>
+    <script src="spam_data.js"></script>
+    <script src="stalenhag_data.js"></script>
+    <script src="tile_data.js"></script>
+    <script src="tokyo-night_data.js"></script>
+    <script src="TokyoNight_data.js"></script>
+    <script src="unsorted_data.js"></script>
+    <script src="wave_data.js"></script>
+    <script src="weirdcore_data.js"></script>
+    <script src="windows_data.js"></script>
+</body>
+</html>
