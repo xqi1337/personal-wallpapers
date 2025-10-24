@@ -268,47 +268,48 @@ Categorized wallpaper previews. two pictures per category.
 
 Following are roughly the sources from where I scraped these images from.
 
-- <https://www.pixiv.net/en/>
-- <https://wallpapercave.com/>
-- <https://www.freepik.com/>
-- <https://in.pinterest.com/>
-- <https://pixabay.com/>
-- <https://unsplash.com/>
-- <https://wallhaven.cc/>
-- <https://wallhere.com/>
-- <https://deviantart.com/>
-- <https://artstation.com/>
-- <https://reddit.com/r/kustom/>
-- <https://www.reddit.com/r/WallpaperRequests/>
-- <https://www.reddit.com/r/wallpaperdump/>
-- <https://www.reddit.com/r/wallpaper/>
-- <https://www.reddit.com/r/Verticalwallpapers/>
-- <https://www.reddit.com/r/unixporn/>
-- <https://www.reddit.com/r/Rainmeter/>
-- <https://www.reddit.com/r/nordtheme/>
-- <https://www.reddit.com/r/manga/>
-- <https://www.reddit.com/r/chillhop/>
-- <https://www.reddit.com/r/awesomewm/>
-- <https://www.reddit.com/r/AnimeWallpaperGif/>
-- <https://www.reddit.com/r/Animewallpaper/>
-- <https://www.reddit.com/r/animegifs/>
-- <https://www.pxfuel.com/>
-- <https://de.vecteezy.com/>
+- <https://www.pixiv.net/en>
+- <https://wallpapercave.com>
+- <https://www.freepik.com>
+- <https://in.pinterest.com>
+- <https://pixabay.com>
+- <https://unsplash.com>
+- <https://wallhaven.cc>
+- <https://wallhere.com>
+- <https://deviantart.com>
+- <https://artstation.com>
+- <https://reddit.com/r/kustom>
+- <https://www.reddit.com/r/WallpaperRequests>
+- <https://www.reddit.com/r/wallpaperdump>
+- <https://www.reddit.com/r/wallpaper>
+- <https://www.reddit.com/r/Verticalwallpapers>
+- <https://www.reddit.com/r/unixporn>
+- <https://www.reddit.com/r/Rainmeter>
+- <https://www.reddit.com/r/nordtheme>
+- <https://www.reddit.com/r/manga>
+- <https://www.reddit.com/r/chillhop>
+- <https://www.reddit.com/r/awesomewm>
+- <https://www.reddit.com/r/AnimeWallpaperGif>
+- <https://www.reddit.com/r/Animewallpaper>
+- <https://www.reddit.com/r/animegifs>
+- <https://www.pxfuel.com>
+- <https://de.vecteezy.com>
 - <https://stock.adobe.com/de/search>
-- <https://www.deviantart.com/>
-- <https://www.wallpaperflare.com/>
-- <https://www.reddit.com/r/kurzgesagt/comments/15pvf7h/kurzgesagt_4k_wallpapers_3840x2160/>
+- <https://www.deviantart.com>
+- <https://www.wallpaperflare.com>
+- <https://www.reddit.com/r/kurzgesagt/comments/15pvf7h/kurzgesagt_4k_wallpapers_3840x2160>
 - <https://imgur.com/gallery/SELjK>
-- <https://42willow.github.io/wallpapers/>
+- <https://42willow.github.io/wallpapers>
 
 ## Tools
 
-- <https://farbenfroh.io/>
+- <https://farbenfroh.io>
 - <https://github.com/lighttigerXIV/catppuccinifier>
-- <https://www.tineye.com/>
+- <https://www.tineye.com>
 - <https://github.com/nekowinston/faerber>
 - <https://github.com/ozwaldorf/lutgen-rs)>
 - <https://github.com/Astropulse/pixeldetector>
+- <https://lut.sh/app>
 
 ## Ending Note
 
