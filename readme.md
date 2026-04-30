@@ -1,10 +1,10 @@
-# welcome to my personal wallpapers
+# Welcome to my personal wallpapers
 
 A curated list of awesome wallpapers related to anime, comics, games & more.
 
 Sharing, suggestions and contributions are always welcome!
 
-## previews
+## Previews
 Categorized wallpaper previews. two pictures per category.
 [For more wallpapers](https://xqi.digital)
 
