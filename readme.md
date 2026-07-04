@@ -268,6 +268,7 @@ Categorized wallpaper previews. two pictures per category.
 
 Following are roughly the sources from where I scraped these images from.
 
+- <https://alphacoders.com/anime-cat-wallpapers>
 - <https://www.pixiv.net/en>
 - <https://wallpapercave.com>
 - <https://www.freepik.com>
