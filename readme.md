@@ -304,13 +304,13 @@ Following are roughly the sources from where I scraped these images from.
 
 ## Tools
 
+- <https://lut.sh>
 - <https://farbenfroh.io>
 - <https://github.com/lighttigerXIV/catppuccinifier>
 - <https://www.tineye.com>
 - <https://github.com/nekowinston/faerber>
 - <https://github.com/ozwaldorf/lutgen-rs)>
 - <https://github.com/Astropulse/pixeldetector>
-- <https://lut.sh/app>
 
 ## Ending Note
 
